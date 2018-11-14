@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
+  */-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -17,6 +17,7 @@ code {
   width: 20rem;
   margin: 2rem auto;
   border-radius: 12px;
+  /* background-image: url('./pattern.jpg'); */
 }
 
 .colors {
@@ -26,9 +27,11 @@ code {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+  /* color: white;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.7); */
 }
 
 label {
@@ -38,4 +41,8 @@ label {
 input {
   width: 14rem;
   margin-bottom: 1rem;
+}
+
+p {
+  text-align: center;
 }

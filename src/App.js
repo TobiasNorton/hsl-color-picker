@@ -37,17 +37,28 @@ class App extends Component {
     })
   }
 
+  displayOpacityValue = () => {}
+
   render() {
     return (
-      <body
-        style={{
-          backgroundColor: `hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
-            this.state.lightnessValue
-          }%, ${this.state.opacityValue})`
-        }}
-      >
-        <div className="box">
-          <h1>HSL Color Picker</h1>
+      <body>
+        <h1
+          style={{
+            color: `hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
+              this.state.lightnessValue
+            }%, ${this.state.opacityValue})`
+          }}
+        >
+          HSLa Color Picker
+        </h1>
+        <div
+          className="box"
+          style={{
+            backgroundColor: `hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
+              this.state.lightnessValue
+            }%, ${this.state.opacityValue})`
+          }}
+        >
           <div className="colors ">
             <label htmlFor="Hue">Hue {this.state.hueValue}</label>
             <input
@@ -91,6 +102,10 @@ class App extends Component {
             />
           </div>
         </div>
+        <p>Copy this into your CSS:</p>
+        <p>{`hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
+          this.state.lightnessValue
+        }%, ${this.state.opacityValue})`}</p>
       </body>
     )
   }
