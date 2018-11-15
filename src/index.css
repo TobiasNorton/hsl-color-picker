@@ -89,8 +89,14 @@ p {
 }
 
 @media (max-width: 390px) {
+  h1 {
+    font-size: 3.7rem;
+  }
+
   .box {
-    width: 12rem;
+    width: 14rem;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
   }
 }
 
