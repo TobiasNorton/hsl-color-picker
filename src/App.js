@@ -6,10 +6,10 @@ class App extends Component {
     super(props)
 
     this.state = {
-      hueValue: 25,
+      hueValue: 185,
       saturationValue: 50,
-      lightnessValue: 10,
-      opacityValue: 0.5
+      lightnessValue: 75,
+      opacityValue: 1
     }
   }
 
@@ -21,23 +21,30 @@ class App extends Component {
 
   changeSaturationValue = event => {
     this.setState({
-      saturationValue: event.target.value
+      saturationValue: Number.parseInt(event.target.value)
     })
   }
 
   changeLightnessValue = event => {
     this.setState({
-      lightnessValue: event.target.value
+      lightnessValue: Number.parseInt(event.target.value)
     })
   }
 
   changeOpacityValue = event => {
     this.setState({
-      opacityValue: event.target.value
+      opacityValue: Number.parseFloat(event.target.value)
     })
   }
 
-  displayOpacityValue = () => {}
+  randomColor = () => {
+    this.setState({
+      hueValue: Math.floor(Math.random() * 360),
+      saturationValue: Math.floor(Math.random() * 100),
+      lightnessValue: Math.floor(Math.random() * 100),
+      opacityValue: Math.random()
+    })
+  }
 
   render() {
     return (
@@ -51,6 +58,9 @@ class App extends Component {
         >
           HSLa Color Picker
         </h1>
+        <div className="center">
+          <button onClick={this.randomColor}>Generate a Random Color</button>
+        </div>
         <div
           className="box"
           style={{
@@ -60,7 +70,7 @@ class App extends Component {
           }}
         >
           <div className="colors ">
-            <label htmlFor="Hue">Hue {this.state.hueValue}</label>
+            <label htmlFor="Hue">Hue - {this.state.hueValue}</label>
             <input
               name="Hue"
               type="range"
@@ -70,7 +80,7 @@ class App extends Component {
               value={this.state.hueValue}
             />
 
-            <label htmlFor="Saturation">Saturation {this.state.saturationValue}%</label>
+            <label htmlFor="Saturation">Saturation - {this.state.saturationValue}%</label>
             <input
               name="Saturation"
               type="range"
@@ -80,7 +90,7 @@ class App extends Component {
               value={this.state.saturationValue}
             />
 
-            <label htmlFor="Lightness">Lightness {this.state.lightnessValue}%</label>
+            <label htmlFor="Lightness">Lightness - {this.state.lightnessValue}%</label>
             <input
               name="Lightness"
               type="range"
@@ -90,7 +100,7 @@ class App extends Component {
               value={this.state.lightnessValue}
             />
 
-            <label htmlFor="Opacity">Opacity {this.state.opacityValue * 100}%</label>
+            <label htmlFor="Opacity">Opacity - {Math.floor(this.state.opacityValue * 100)}%</label>
             <input
               name="Opacity"
               type="range"
@@ -105,7 +115,7 @@ class App extends Component {
         <p>Copy this into your CSS:</p>
         <p>{`hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
           this.state.lightnessValue
-        }%, ${this.state.opacityValue})`}</p>
+        }%, ${this.state.opacityValue.toFixed(2)})`}</p>
       </body>
     )
   }
