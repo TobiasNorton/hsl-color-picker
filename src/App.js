@@ -113,7 +113,7 @@ class App extends Component {
           </div>
         </div>
         <p>Copy this into your CSS:</p>
-        <p>{`hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
+        <p className="bottom">{`hsla(${this.state.hueValue}, ${this.state.saturationValue}%, ${
           this.state.lightnessValue
         }%, ${this.state.opacityValue.toFixed(2)})`}</p>
       </body>

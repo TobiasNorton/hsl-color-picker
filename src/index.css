@@ -79,6 +79,10 @@ p {
   text-align: center;
 }
 
+.bottom {
+  margin-bottom: 4rem;
+}
+
 @media (max-width: 480px) {
   .box {
     width: 16rem;
